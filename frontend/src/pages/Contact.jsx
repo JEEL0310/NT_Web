@@ -118,7 +118,12 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/contact", {
+      const baseUrl = import.meta.env.VITE_API_URL || "";
+      const apiEndpoint = baseUrl
+        ? `${baseUrl.replace(/\/+$/, "")}/api/contact`
+        : "/api/contact";
+
+      const response = await fetch(apiEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -126,7 +131,18 @@ export default function Contact() {
         body: JSON.stringify(payload),
       });
 
-      const data = await response.json();
+      let data;
+      const contentType = response.headers.get("content-type") || "";
+      if (contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        await response.text();
+        throw new Error(
+          response.status === 404 || response.status === 405
+            ? "Backend mail service is not reachable at this URL. GitHub Pages cannot run Node.js backend. Please verify your backend server is deployed and VITE_API_URL is set."
+            : `Server returned an unexpected response (${response.status}). Please try again or email info@nuviontech.com.`
+        );
+      }
 
       if (!response.ok || !data.success) {
         throw new Error(

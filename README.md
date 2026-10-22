@@ -1,16 +1,52 @@
-# React + Vite
+# Nuvion Technologies Web Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is organized into two independent sub-projects:
 
-Currently, two official plugins are available:
+```
+NT_Web/
+├── frontend/    # React 19 + Vite + Tailwind CSS (Ready for GitHub Pages)
+└── backend/     # Node.js + Express + Nodemailer + reCAPTCHA v2 (Ready for Render/Railway/VPS)
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ⚡ Quick Start (Local Development)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Run the Backend
+```bash
+cd backend
+npm install
+npm start
+```
+Runs at: `http://localhost:5050` (Health: `http://localhost:5050/api/health`)
 
-## Expanding the ESLint configuration
+### 2. Run the Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Runs at: `http://localhost:5173`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🌐 Deploying to Production
+
+### 1. Backend (Free Cloud Hosting on Render or Railway)
+Because GitHub Pages only serves static files and cannot execute Node.js:
+1. Push the `backend/` folder to a repository (or select `backend` as the Root Directory in Render).
+2. Set build command: `npm install` and start command: `node server.js`.
+3. Add your environment variables (`SMTP_USER`, `SMTP_PASS`, `SMTP_TO`, `RECAPTCHA_SECRET_KEY`).
+4. Copy your live backend URL (e.g. `https://your-backend.onrender.com`).
+
+### 2. Frontend (GitHub Pages)
+In `frontend/.env`, set:
+```env
+VITE_API_URL=https://your-backend.onrender.com
+```
+Then build and deploy:
+```bash
+cd frontend
+npm run build
+```
+Upload the `frontend/dist` directory to GitHub Pages.
