@@ -17,23 +17,6 @@ export const caseStudies = [
     ],
   },
   {
-    id: "nothing-before-coffee",
-    title: "Nothing Before Coffee × FUDR – Platform Security Assessment",
-    industry: "Cybersecurity & VAPT",
-    client: "Nothing Before Coffee × FUDR",
-    technologies: "OWASP VAPT, Burp Suite, Network & API Auditing",
-    challenge:
-      "A rapidly expanding national F&B brand with web and cross-platform mobile apps (Android & iOS) required exhaustive security validation to protect user data, mobile payment gateways, user panels, and backend APIs prior to high-volume commercial expansion.",
-    solution:
-      "Conducted rigorous OWASP-aligned Vulnerability Assessment and Penetration Testing (VAPT) across web portals, Android & iOS mobile applications, API endpoints, authentication mechanisms, and administrative user panels with end-to-end exploit validation and remediation guidance.",
-    impact: [
-      "Zero critical vulnerabilities across Android & iOS production apps",
-      "Hardened API endpoints and token-based authentication flows",
-      "Admin panel access controls and privilege separation enforced",
-      "Full OWASP security compliance verified before national rollout",
-    ],
-  },
-  {
     id: "waterpark360-iot",
     title: "Waterpark360 – RFID & Connected Visitor Operations",
     industry: "Waterpark & Visitor Operations",
@@ -133,23 +116,6 @@ export const caseStudies = [
       "Real-time coordination between engineering design, procurement, and assembly",
       "Reduced component shortage delays on the assembly line by 45%",
       "Integrated post-delivery warranty and spare-parts management",
-    ],
-  },
-  {
-    id: "devgn-cinex",
-    title: "Devgn CineX × Alfennzo – F&B & Cinema Platform Security",
-    industry: "Entertainment & Hospitality Security",
-    client: "Devgn CineX × Alfennzo",
-    technologies: "Web & QR VAPT, API Remediation",
-    challenge:
-      "Modern cinema dining and multiplex ecosystem incorporating QR-based seat ordering, real-time kitchen display systems, and digital billing required thorough security auditing.",
-    solution:
-      "Conducted security assessment covering QR code ordering mechanisms, F&B inventory and billing APIs, web management consoles, and payment gateway integrations with remediation validation.",
-    impact: [
-      "Secured QR code ordering against parameter tampering and pricing manipulation",
-      "Hardened concession billing APIs and kitchen management network",
-      "Zero-leak audit trail for transactional records and patron data",
-      "Verified compliance with enterprise data privacy standards",
     ],
   },
   {

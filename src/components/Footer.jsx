@@ -44,6 +44,12 @@ export default function Footer() {
                   <I size={14} className="text-brand" /> {t}
                 </span>
               ))}
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-surface border border-line px-3 py-1.5 text-ink-2">
+                <span className="size-2 rounded-full bg-brand" /> IAAPA Member 2026
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-surface border border-line px-3 py-1.5 text-ink-2">
+                <span className="size-2 rounded-full bg-emerald-500" /> Udyam Registered (MSME)
+              </span>
             </div>
           </div>
 
@@ -93,10 +99,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 p-4 rounded-xl bg-surface border border-line text-xs text-ink-2">
-              <div className="font-bold text-ink mb-1">Target Global Markets:</div>
-              <div>US, UK, Canada, France, Germany, Netherlands, Switzerland &amp; Australia.</div>
-            </div>
           </nav>
         </div>
 
